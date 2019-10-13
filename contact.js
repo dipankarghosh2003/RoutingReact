@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import {BrowserRouter as Router,Link} from 'react-router-dom';
+import {BrowserRouter as Router,Link,Switch,Route} from 'react-router-dom';
+import ContactDetails from './ContactDetails';
 class Contact extends React.Component{
   constructor(props){
     super(props);
@@ -29,6 +30,9 @@ class Contact extends React.Component{
       <ul>
       {this.state.contactList.map(contact=><li><Link to={`/contact/${contact.id}`}>{contact.name}</Link></li>)}
       </ul>
+      <Switch>
+        <Route path="/contact/:id" Component={ContactDetails}></Route>
+      </Switch>
       </Router>
       </div>
     )
