@@ -27,7 +27,7 @@ class Contact extends React.Component{
       <div>
       <Router>
       <ul>
-      {this.state.contactList.map(contact=><li><Link to={contact.id}>{contact.name}</Link></li>)}
+      {this.state.contactList.map(contact=><li><Link to={`/contact/${contact.id}`}>{contact.name}</Link></li>)}
       </ul>
       </Router>
       </div>
